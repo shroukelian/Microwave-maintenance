@@ -1,0 +1,232 @@
+/* ======================= Global Styles & Variables (NEW POLISHED DESIGN) ======================= */
+:root {
+    --primary-color: #0d47a1;  
+    --accent-color: #f9a825;   
+    --dark-color: #212529;    
+    --light-color: #f8f9fa;    
+    --white-color: #ffffff;
+    --font-family: 'Cairo', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--font-family);
+    color: #555; 
+    line-height: 1.8;
+    background-color: var(--white-color);
+}
+.container { max-width: 1140px; margin: 0 auto; padding: 0 20px; }
+a { text-decoration: none; color: inherit; }
+.section-padding { padding: 5rem 0; }
+.bg-light { background-color: var(--light-color); }
+
+/* ======================= Buttons & Titles (IMPROVED) ======================= */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    border-radius: 50px; 
+    font-weight: 700;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+.btn-primary {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+.btn-primary:hover {
+    background-color: #ffb300;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+.btn-lg {
+    padding: 18px 40px;
+    font-size: 1.1rem;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.section-title h2 {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+/* ======================= Header (IMPROVED) ======================= */
+.header {
+    background-color: var(--white-color);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.header .container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-size: 1.8rem; font-weight: 900; color: var(--primary-color); }
+.nav-links { display: flex; list-style: none; gap: 2.5rem; }
+.nav-links a { font-weight: 700; transition: color 0.3s ease; }
+.nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
+.nav-btn { padding: 10px 24px; box-shadow: none; }
+.menu-icon { display: none; font-size: 1.8rem; cursor: pointer; }
+
+/* ======================= Hero Section (IMPROVED) ======================= */
+#hero {
+background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), url('https://images.unsplash.com/photo-1626903746927-2a1e0f0559e3?q=80&w=2070&auto=format&fit=crop') no-repeat center center/cover;    height: 90vh;
+    color: var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.hero-content h1 { font-size: 3.8rem; font-weight: 900; margin-bottom: 1.5rem; line-height: 1.3; }
+.hero-content p { font-size: 1.3rem; max-width: 700px; margin: 0 auto 2.5rem auto; opacity: 0.9; }
+#hero .btn-primary {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+}
+
+/* ======================= About Us Section (IMPROVED) ======================= */
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; align-items: center; }
+.about-image img { width: 100%; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.1); }
+.about-content h2 { font-size: 2.5rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--dark-color);
+ line-height: 1.4; 
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--accent-color); 
+    display: inline-block; }
+.about-content p { margin-bottom: 1rem; color: #555; }
+
+/* ======================= Features Section (IMPROVED) ======================= */
+.features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; }
+.feature-card {
+    background-color: var(--white-color);
+    padding: 2.5rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    border: 1px solid #eee;
+}
+.feature-card:hover { transform: translateY(-10px); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    background-color: var(--light-color);
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+}
+.feature-card h3 { font-size: 1.4rem; margin-bottom: 1rem; color: var(--dark-color); }
+
+/* ======================= Faults Section (IMPROVED) ======================= */
+.faults-list { list-style: none; max-width: 800px; margin: 0 auto; }
+.faults-list li {
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 1.2rem 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    border: 1px solid #eee;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.faults-list li:hover {
+    transform: translateX(-10px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+.faults-list i {
+    color: var(--accent-color);
+    margin-left: 15px;
+    font-size: 1.5rem;
+}
+
+/* ======================= CTA & Footer (IMPROVED) ======================= */
+#cta {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+#cta h2 { color: var(--white-color); }
+#cta p { max-width: 600px; margin: 1rem auto 2rem auto; opacity: 0.9; }
+.footer {
+    background-color: var(--dark-color);
+    color: #bdc3c7;
+    text-align: center;
+    padding: 2.5rem 0;
+}
+
+/* ======================= Floating Buttons (IMPROVED) ======================= */
+/* ======================= Floating Buttons (NEW DESIGN) ======================= */
+.floating-buttons {
+    position: fixed;
+    bottom: 25px;
+    right: 25px; 
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.floating-btn {
+    display: flex;
+    align-items: center;
+    background-color: var(--white-color);
+    border-radius: 50px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+    overflow: hidden; 
+   
+    height: 60px;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.floating-btn i {
+    font-size: 2rem;
+    min-width: 60px; 
+    text-align: center;
+}
+
+.floating-btn span {
+    white-space: nowrap;
+    font-weight: 700;
+    padding-right: 15px; 
+}
+
+
+.call-btn {
+    color: #3498db; 
+}
+.whatsapp-btn {
+    color: #25D366; 
+}
+
+@media (max-width: 768px) {
+    .floating-buttons {
+        bottom: 15px;
+        right: 15px;
+    }
+}
+
+/* ======================= Responsive (IMPROVED) ======================= */
+@media (max-width: 992px) {
+    .nav-links { display: none; }
+    .menu-icon { display: block; }
+    .nav-links.active { display: flex; flex-direction: column; position: absolute; top: 100%; right: 0; width: 100%; background-color: var(--white-color); box-shadow: 0 5px 10px rgba(0,0,0,0.1); padding: 1rem 0; gap: 0; }
+    .nav-links.active li { width: 100%; text-align: center; }
+    .nav-links.active a { padding: 1rem; display: block; }
+    .about-grid { grid-template-columns: 1fr; }
+    .about-image { margin-bottom: 2rem; }
+}
+@media (max-width: 768px) {
+    .section-title h2 { font-size: 2.2rem; }
+    .hero-content h1 { font-size: 2.8rem; }
+    .nav-btn { display: none; }
+    .logo { font-size: 1.5rem; }
+}
