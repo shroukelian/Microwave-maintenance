@@ -148,17 +148,126 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 }
 
 /* ======================= CTA & Footer (IMPROVED) ======================= */
+/* ======================= CTA Section (NEW POLISHED DESIGN) ======================= */
 #cta {
     background-color: var(--primary-color);
     color: var(--white-color);
+    padding: 5rem 0;
+    position: relative; /* مهم لإضافة لمسة جمالية */
+    overflow: hidden; /* لإخفاء أي عناصر زخرفية تخرج عن الإطار */
 }
-#cta h2 { color: var(--white-color); }
-#cta p { max-width: 600px; margin: 1rem auto 2rem auto; opacity: 0.9; }
+
+/* لمسة جمالية: إضافة نمط خفيف جدًا للخلفية */
+#cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.03) 75%),
+                      linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 25%, transparent 25%, transparent 75%, rgba(255, 255, 255, 0.03) 75%);
+    background-size: 20px 20px;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+
+/* الحل الأساسي: توسيط كل المحتوى */
+#cta .container {
+    position: relative; /* لجعل المحتوى فوق النمط الزخرفي */
+    z-index: 2;
+    text-align: center; 
+}
+
+#cta h2 {
+    color: var(--white-color);
+    font-size: 2.8rem; /* تكبير العنوان الرئيسي */
+    font-weight: 900;
+}
+
+#cta p {
+    max-width: 600px;
+    margin: 1.5rem auto 2.5rem auto; /* زيادة المسافات العمودية */
+    opacity: 0.9;
+    font-size: 1.2rem;
+}
+
+#cta .btn-primary {
+    transform: scale(1.1); /* تكبير الزر قليلاً لتمييزه */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+#cta .btn-primary:hover {
+    transform: scale(1.15); /* تكبير إضافي عند المرور */
+}
+/* ======================= Footer (NEW DESIGN) ======================= */
 .footer {
     background-color: var(--dark-color);
     color: #bdc3c7;
+    padding: 4rem 0 0;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #444;
+}
+
+.footer-col h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--white-color);
+    margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+    display: inline-block;
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: var(--white-color);
+    margin-bottom: 1rem;
+}
+
+.footer-col p {
+    line-height: 1.8;
+}
+
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 1rem;
+}
+
+.footer-col ul a {
+    transition: color 0.3s, padding-right 0.3s;
+}
+
+.footer-col ul a:hover {
+    color: var(--accent-color);
+    padding-right: 8px;
+}
+
+.footer-contact-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.footer-contact-list i {
+    color: var(--accent-color);
+    font-size: 1.1rem;
+    margin-top: 5px; /* لضبط المحاذاة */
+}
+
+.footer-bottom {
+    padding: 2rem 0;
     text-align: center;
-    padding: 2.5rem 0;
+    font-size: 0.9rem;
 }
 
 /* ======================= Floating Buttons (IMPROVED) ======================= */
@@ -211,6 +320,10 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
     .floating-buttons {
         bottom: 15px;
         right: 15px;
+    }
+      #cta h2 {
+        font-size: 2.2rem;
+        line-height: 1.4;
     }
 }
 
