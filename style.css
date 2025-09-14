@@ -67,9 +67,9 @@ a { text-decoration: none; color: inherit; }
 }
 .header .container { display: flex; justify-content: space-between; align-items: center; }
 .logo img {
-    height: 50px; /* يمكنك تعديل هذا الارتفاع ليناسب تصميم شعارك */
+    height: 50px; 
     width: auto;
-    display: block; /* لإزالة أي مسافات إضافية تحت الصورة */
+    display: block; 
 }.nav-links { display: flex; list-style: none; gap: 2.5rem; }
 .nav-links a { font-weight: 700; transition: color 0.3s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
@@ -150,17 +150,15 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
     font-size: 1.5rem;
 }
 
-/* ======================= CTA & Footer (IMPROVED) ======================= */
-/* ======================= CTA Section (NEW POLISHED DESIGN) ======================= */
+/* ======================= CTA Section  ======================= */
 #cta {
     background-color: var(--primary-color);
     color: var(--white-color);
     padding: 5rem 0;
-    position: relative; /* مهم لإضافة لمسة جمالية */
-    overflow: hidden; /* لإخفاء أي عناصر زخرفية تخرج عن الإطار */
+    position: relative; 
+    overflow: hidden; 
 }
 
-/* لمسة جمالية: إضافة نمط خفيف جدًا للخلفية */
 #cta::before {
     content: '';
     position: absolute;
@@ -176,33 +174,32 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 }
 
 
-/* الحل الأساسي: توسيط كل المحتوى */
 #cta .container {
-    position: relative; /* لجعل المحتوى فوق النمط الزخرفي */
+    position: relative; 
     z-index: 2;
     text-align: center; 
 }
 
 #cta h2 {
     color: var(--white-color);
-    font-size: 2.8rem; /* تكبير العنوان الرئيسي */
+    font-size: 2.8rem; 
     font-weight: 900;
 }
 
 #cta p {
     max-width: 600px;
-    margin: 1.5rem auto 2.5rem auto; /* زيادة المسافات العمودية */
+    margin: 1.5rem auto 2.5rem auto; 
     opacity: 0.9;
     font-size: 1.2rem;
 }
 
 #cta .btn-primary {
-    transform: scale(1.1); /* تكبير الزر قليلاً لتمييزه */
+    transform: scale(1.1); 
     box-shadow: 0 8px 25px rgba(0,0,0,0.2);
 }
 
 #cta .btn-primary:hover {
-    transform: scale(1.15); /* تكبير إضافي عند المرور */
+    transform: scale(1.15); 
 }
 /* ======================= Footer (NEW DESIGN) ======================= */
 .footer {
@@ -227,9 +224,9 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 }
 
 .footer-logo img {
-    height: 60px; /* يمكنك جعل حجمه أكبر قليلاً في الفوتر */
+    height: 60px; 
     width: auto;
-    filter: brightness(0) invert(1); /* مهم جدًا ليظهر الشعار باللون الأبيض على الخلفية الداكنة */
+    filter: brightness(0) invert(1); 
 }
 
 .footer-col p {
@@ -262,7 +259,7 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 .footer-contact-list i {
     color: var(--accent-color);
     font-size: 1.1rem;
-    margin-top: 5px; /* لضبط المحاذاة */
+    margin-top: 5px; 
 }
 
 .footer-bottom {
@@ -271,8 +268,7 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
     font-size: 0.9rem;
 }
 
-/* ======================= Floating Buttons (IMPROVED) ======================= */
-/* ======================= Floating Buttons (NEW DESIGN) ======================= */
+/* ======================= Floating Buttons ======================= */
 .floating-buttons {
     position: fixed;
     bottom: 25px;
@@ -318,19 +314,16 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 }
 
 /* ======================= Gallery Section ======================= */
-/* ======================= Service Cards Section (formerly Gallery) ======================= */
 .gallery-grid {
     display: grid;
-    /* 1. بشكل افتراضي (للموبايل)، اجعلها في عمود واحد */
     grid-template-columns: 1fr;
     gap: 2rem;
 }
 .gallery-wrapper {
-    max-width: 1000px; /* تحديد العرض الأقصى للمحتوى الداخلي */
-    margin: 0 auto; /* توسيط هذا المحتوى داخل الحاوية الأكبر */
+    max-width: 1000px; 
+    margin: 0 auto; 
 }
 
-/* 2. للشاشات الأكبر من 768 بكسل (التابلت والكمبيوتر)، اجعلها في 3 أعمدة */
 @media (min-width: 768px) {
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
@@ -359,22 +352,30 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 }
 
 .service-content {
-    padding: 2rem;
+    padding: 1.5rem; 
     text-align: center;
+    position: relative; 
 }
 
 .service-icon {
-    width: 60px;
-    height: 60px;
+    width: 65px; 
+    height: 65px;
     background-color: var(--primary-color);
     color: var(--white-color);
-    font-size: 1.8rem;
+    font-size: 1.8rem; 
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: -50px auto 1rem auto; /* خدعة لرفع الأيقونة فوق البطاقة */
-    border: 4px solid var(--white-color);
+    position: absolute;
+    top: -32.5px; 
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 0 0 2px var(--primary-color); 
+}
+
+.service-text {
+    padding-top: 35px; 
 }
 
 .service-content h3 {
@@ -386,7 +387,6 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
     font-size: 1rem;
     line-height: 1.7;
 }
-
 
 /* ======================= FAQ Section ======================= */
 .faq-accordion { max-width: 800px; margin: 0 auto; }
