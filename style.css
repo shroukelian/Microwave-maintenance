@@ -66,8 +66,11 @@ a { text-decoration: none; color: inherit; }
     z-index: 1000;
 }
 .header .container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.8rem; font-weight: 900; color: var(--primary-color); }
-.nav-links { display: flex; list-style: none; gap: 2.5rem; }
+.logo img {
+    height: 50px; /* يمكنك تعديل هذا الارتفاع ليناسب تصميم شعارك */
+    width: auto;
+    display: block; /* لإزالة أي مسافات إضافية تحت الصورة */
+}.nav-links { display: flex; list-style: none; gap: 2.5rem; }
 .nav-links a { font-weight: 700; transition: color 0.3s ease; }
 .nav-links a:hover, .nav-links a.active { color: var(--primary-color); }
 .nav-btn { padding: 10px 24px; box-shadow: none; }
@@ -223,12 +226,10 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
     margin-bottom: 1.5rem;
 }
 
-.footer-logo {
-    display: inline-block;
-    font-size: 1.8rem;
-    font-weight: 900;
-    color: var(--white-color);
-    margin-bottom: 1rem;
+.footer-logo img {
+    height: 60px; /* يمكنك جعل حجمه أكبر قليلاً في الفوتر */
+    width: auto;
+    filter: brightness(0) invert(1); /* مهم جدًا ليظهر الشعار باللون الأبيض على الخلفية الداكنة */
 }
 
 .footer-col p {
@@ -317,56 +318,110 @@ background: linear-gradient(rgba(13, 71, 161, 0.85), rgba(13, 71, 161, 0.85)), u
 }
 
 /* ======================= Gallery Section ======================= */
+/* ======================= Service Cards Section (formerly Gallery) ======================= */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    /* 1. بشكل افتراضي (للموبايل)، اجعلها في عمود واحد */
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+.gallery-wrapper {
+    max-width: 1000px; /* تحديد العرض الأقصى للمحتوى الداخلي */
+    margin: 0 auto; /* توسيط هذا المحتوى داخل الحاوية الأكبر */
 }
 
-.gallery-item {
+/* 2. للشاشات الأكبر من 768 بكسل (التابلت والكمبيوتر)، اجعلها في 3 أعمدة */
+@media (min-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.service-card {
+    background-color: var(--white-color);
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    position: relative;
-    height: 250px;
-    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
 }
 
-.gallery-item img {
+.service-image {
+    height: 220px;
+}
+.service-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.4s ease;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.1);
+.service-content {
+    padding: 2rem;
+    text-align: center;
 }
 
-.gallery-item::after {
-    content: '\f00e'; 
+.service-icon {
+    width: 60px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-size: 1.8rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: -50px auto 1rem auto; /* خدعة لرفع الأيقونة فوق البطاقة */
+    border: 4px solid var(--white-color);
+}
+
+.service-content h3 {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+.service-content p {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+
+/* ======================= FAQ Section ======================= */
+.faq-accordion { max-width: 800px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid #eee; }
+.faq-question {
+    width: 100%;
+    text-align: right;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--dark-color);
+}
+.faq-question::after {
+    content: '\f078'; /* Chevron down icon */
     font-family: 'Font Awesome 5 Free';
     font-weight: 900;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    color: var(--white-color);
-    font-size: 2.5rem;
-    background-color: rgba(13, 71, 161, 0.7);
-    width: 70px;
-    height: 70px;
-    line-height: 70px;
-    text-align: center;
-    border-radius: 50%;
-    opacity: 0;
-    transition: all 0.4s ease;
+    transition: transform 0.3s ease;
 }
+.faq-item.active .faq-question::after {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+}
+.faq-answer p { padding-bottom: 1.5rem; }
 
-.gallery-item:hover::after {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-}
+
 @media (max-width: 768px) {
     .floating-buttons {
         bottom: 15px;
